@@ -1,0 +1,127 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "quarkus:dev",
+			"type": "shell",
+			"command": "mvn quarkus:dev ",
+			"isBackground": true,
+			"problemMatcher": [
+				{
+					"pattern": [
+						{
+							"regexp": "\\b\\B",
+							"file": 1,
+							"location": 2,
+							"message": 3
+						}
+					],
+					"background": {
+						"activeOnStart": true,
+						"beginsPattern": "^.*Scanning for projects...*",
+						"endsPattern": "^.*Quarkus .* started in .*\\. Listening on:*"
+					}
+				}
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "test",
+			"type": "shell",
+			"command": "mvn test",
+			"group": "test",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "package",
+			"type": "shell",
+			"command": "mvn clean package",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "compile",
+			"type": "shell",
+			"command": "mvn clean compile",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "mvn clean",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "formatter:format",
+			"type": "shell",
+			"command": "mvn formatter:format",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "formatter:validate",
+			"type": "shell",
+			"command": "mvn formatter:validate",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+		{
+			"label": "quarkus-bootstrap:build-tree",
+			"type": "shell",
+			"command": "mvn quarkus-bootstrap:build-tree",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true,
+				"focus": true,
+			}
+		},
+	]
+}
