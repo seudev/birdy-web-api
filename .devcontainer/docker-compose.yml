@@ -1,0 +1,54 @@
+version: "3.7"
+
+services:
+  workspace:
+    build:
+      context: ../.devcontainer
+      dockerfile: ./Dockerfile
+    networks:
+      - workspace
+    volumes:
+      - type: bind
+        source: ..
+        target: /usr/src/app
+        consistency: delegated
+
+      - type: volume
+        source: vscode-server-extensions
+        target: /root/.vscode-server/extensions
+        consistency: delegated
+
+      - type: volume
+        source: vscode-server-insiders-extensions
+        target: /root/.vscode-server-insiders/extension
+        consistency: delegated
+
+      - type: volume
+        source: bash-history
+        target: /root/.bash_history
+        consistency: delegated
+
+      - type: volume
+        source: maven-m2
+        target: /root/.m2
+        consistency: delegated
+
+networks:
+  workspace:
+
+volumes:
+  vscode-server-extensions:
+    external: true
+    name: vscode-server-extensions
+
+  vscode-server-insiders-extensions:
+    external: true
+    name: vscode-server-insiders-extensions
+
+  bash-history:
+    external: true
+    name: bash-history
+
+  maven-m2:
+    external: true
+    name: maven-m2

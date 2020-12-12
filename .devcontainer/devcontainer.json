@@ -1,0 +1,34 @@
+{
+	"name": "seudev/java-4dev:11",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "workspace",
+	"workspaceFolder": "/usr/src/app",
+	"settings": {
+		"java.home": "/usr/local/openjdk-11/",
+		"java.format.settings.profile": "Seudev's Style",
+		"java.format.settings.url": "https://raw.githubusercontent.com/seudev/seudev-style-guide/v1.0.1/java/eclipse-java-seudev-style.xml",
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.configuration.maven.globalSettings": "${localWorkspaceFolder}/.mvn/settings.xml",
+		"quarkus.tools.debug.terminateProcessOnExit": "Always terminate",
+		"terminal.integrated.shell.linux": "/bin/bash",
+	},
+	"extensions": [
+		"seudev.vscode-java-snippets",
+		"vscjava.vscode-java-pack",
+		"redhat.vscode-xml",
+		"redhat.vscode-quarkus",
+	],
+	"runArgs": [
+		"--env-file",
+		"${localWorkspaceFolder}/.env"
+	],
+	"postStartCommand": [
+		"init-container"
+	],
+	"forwardPorts": [
+		8080
+	],
+	"overrideCommand": false
+}

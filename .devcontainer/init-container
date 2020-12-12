@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set-git-config
+
+BASHRC_PATH="/root/.bashrc"
+
+cat $WORKDIR/.devcontainer/.bashrc >> $BASHRC_PATH
+
+source $BASHRC_PATH
