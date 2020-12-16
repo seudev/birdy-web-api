@@ -36,7 +36,7 @@ public class SpotifyMusicMapper {
     private UriBuilder embedAlbumUrlBuilder;
 
     @PostConstruct
-    private void init() {
+    void init() {
         embedMusicUrlBuilder = UriBuilder.fromUri(embedMusicUrlTemplate);
         embedAlbumUrlBuilder = UriBuilder.fromUri(embedAlbumUrlTemplate);
     }
