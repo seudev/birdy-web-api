@@ -7,7 +7,7 @@ This project is splitted in two repositories:
 -   [birdy-web-ui](https://github.com/seudev/birdy-web-ui)
 -   [birdy-web-api](#birdy-web-api)
 
-## Why is the name Bridy?
+## Why is the name Birdy?
 
 Birds migrate acording to the temperature also they can change their pattern of singing in different stages of live, such as during the reproductive period that also has to do with the temperature (when is hotter).
 
